@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+ 	<title> Anagram </title>
+ 		<style>
+        		body {
+        		background-color: #eadab7;
+       		}
+        	h1 {
+        	    color: #8d5f48;
+        	}
+    		</style>
+	</head>
+	<body>
+	    <h1> Anagram words </h1>
+	    <button onclick="anagram()"> Press me! </button>
+	    <h4 id="result"></h4>
+	    <script>
+		function anagram() {
+        	 var user = prompt("Please input your first word: ");
+        	 var user2 = prompt("Please enter the word you wish to check: ");
+        	 user  = user.toLowerCase().trim();
+        	 user2 = user2.toLowerCase().trim();
+
+        	 const arrayno1 = user.split('');
+        	 const arrayno2 = user2.split('');
+
+        	 const sort1 = arrayno1.sort().join('');
+        	 const sort2 = arrayno2.sort().join('');
+
+        	 const Anagram = sort1 === sort2;
+
+        	 if(Anagram) {
+                	document.getElementById("result").innerHTML = user + " and " + user2 + " are anagrams.";
+		} 
+		else {
+                	document.getElementById("result").innerHTML = user + " and " + user2 + " are not anagrams.";
+        	    }
+      		}
+        </script>
+	</body>
+</html>
